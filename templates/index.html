@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Food Waste Reduction Platform</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h1>AI-Driven Food Waste Reduction</h1>
+
+        <p>
+            Smart Donation Platform
+        </p>
+
+    </header>
+
+
+    <!-- ========================= -->
+    <!-- SURPLUS PREDICTION -->
+    <!-- ========================= -->
+
+    <section>
+
+        <h2>Food Surplus Prediction</h2>
+
+
+        <input type="number" id="food_prepared" placeholder="Food Prepared">
+
+
+        <input type="number" id="food_sold" placeholder="Food Sold">
+
+
+        <input type="number" id="remaining_food" placeholder="Remaining Food">
+
+
+        <button onclick="predictSurplus()">
+
+            Predict Surplus
+
+        </button>
+
+
+        <h3 id="prediction_result"></h3>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- DONATION -->
+    <!-- ========================= -->
+
+    <section>
+
+        <h2>Donate Surplus Food</h2>
+
+
+        <input type="text" id="donor_name" placeholder="Donor Name">
+
+
+        <input type="text" id="food_name" placeholder="Food Name">
+
+
+        <input type="number" id="quantity" placeholder="Quantity">
+
+
+        <input type="text" id="location" placeholder="Location">
+
+
+        <input type="date" id="expiry">
+
+
+        <button onclick="addDonation()">
+
+            Add Donation
+
+        </button>
+
+
+        <p id="donation_message"></p>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- DONATION LIST -->
+    <!-- ========================= -->
+
+    <section>
+
+        <h2>Donation Tracking</h2>
+
+
+        <button onclick="loadDonations()">
+
+            Refresh Donations
+
+        </button>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Food</th>
+
+                    <th>Quantity</th>
+
+                    <th>Location</th>
+
+                    <th>Expiry</th>
+
+                    <th>Status</th>
+
+                    <th>NGO</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="donation_table">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <script src="{{ url_for('static', filename='script.js') }}">
+    </script>
+
+
+</body>
+
+</html>
